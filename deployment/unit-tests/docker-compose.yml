@@ -1,0 +1,39 @@
+services:
+
+  backend:
+    container_name: backend
+    image: IMAGE_NAME
+    ports:
+      - "8000"
+    depends_on:
+      - mongo
+    command: sleep 3600
+    env_file:
+      - ./.env.test
+    environment:
+      MONGO_URL: mongodb://mongo:27017/teamx
+      ENVIRONMENT: tests
+      REDIS_URL: redis://redis:6379
+  
+
+  mongo:
+    image: mongo:8.0.9
+    container_name: db
+    ports:
+      - "27017"
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379"
+  
+  postgres:
+    image: postgres:17.6
+    container_name: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test
+    ports:
+      - "5432"

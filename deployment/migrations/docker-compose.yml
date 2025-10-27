@@ -1,0 +1,11 @@
+version: '3'
+services:
+  backend:
+    image: IMAGE_NAME
+    container_name: backend
+    command: sleep 1800
+    network_mode: host
+    env_file:
+      - ./.env
+    environment:
+      - DB_HOST=127.0.0.1
