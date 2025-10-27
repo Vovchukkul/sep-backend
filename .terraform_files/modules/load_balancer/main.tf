@@ -14,7 +14,7 @@ resource "aws_lb" "backend" {
 }
 
 resource "aws_lb_target_group" "backend" {
-  name        = "${var.prefix}-backend"
+  name        = "${var.prefix}-back"
   protocol    = "HTTP"
   vpc_id      = var.vpc_id
   target_type = "ip"
