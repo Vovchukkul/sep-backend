@@ -3,7 +3,6 @@ project_name           = "exhibition-exp"                                       
 region                 = "us-east-2"                                      # Region where resources should be created
 cloudfront_price_class = "PriceClass_100" # Select one from a list 
 root_domain_name       = "exhibition-exp.pp.ua"                                     # Your root domain name, don't use subdomain here
-domain_name        = "qa-exhibition-exp.pp.ua"                                 # Image subdomain
 db_engine_version      = "16.10"
 db_instance_class      = "db.t4g.micro"
 db_storage             = 20
