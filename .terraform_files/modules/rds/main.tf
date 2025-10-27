@@ -71,8 +71,8 @@ resource "aws_ssm_parameter" "POSTGRES_HOST" {
   value       = aws_db_instance.db.address
   type        = "SecureString"
 }
-resource "aws_ssm_parameter" "POSTGRES_NAME" {
-  name        = "/be/${terraform.workspace}/${var.project_name}/POSTGRES_NAME"
+resource "aws_ssm_parameter" "POSTGRES_DB" {
+  name        = "/be/${terraform.workspace}/${var.project_name}/POSTGRES_DB"
   description = "Database user name"
   value       = aws_db_instance.db.db_name
   type        = "SecureString"
