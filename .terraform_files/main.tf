@@ -59,11 +59,11 @@ module "certificate" {
 
 }
 
-# module "cloud_watch" {
-#   source      = "./modules/cloud_watch"
-#   common_tags = local.common_tags
-#   prefix      = local.prefix
-# }
+module "cloud_watch" {
+  source      = "./modules/cloud_watch"
+  common_tags = local.common_tags
+  prefix      = local.prefix
+}
 
 module "ecr" {
   source      = "./modules/ecr"
