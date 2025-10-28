@@ -20,13 +20,11 @@ resource "aws_iam_role_policy_attachment" "bastion_attach_policy" {
   ])
   role       = aws_iam_role.bastion.name
   policy_arn = each.key
-
 }
 
 resource "aws_iam_instance_profile" "bastion" {
   name = "${var.prefix}-bastion-instance-profile"
   role = aws_iam_role.bastion.name
-
 }
 
 
