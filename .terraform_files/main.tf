@@ -183,17 +183,17 @@ module "vpc" {
 #   ecs_sg       = module.ecs_fargate.ecs_sg
 # }
 
-# module "eventbridge" {
-#   source = "./modules/eventbridge"
-#   prefix = local.prefix
+module "eventbridge" {
+  source = "./modules/eventbridge"
+  prefix = local.prefix
 
-#   scheduler_backend_down_state      = var.scheduler_backend_down_state
-#   scheduler_backend_down_expression = var.scheduler_backend_down_expression
+  scheduler_backend_down_state      = var.scheduler_backend_down_state
+  scheduler_backend_down_expression = var.scheduler_backend_down_expression
 
-#   scheduler_backend_desired_count = var.scheduler_backend_desired_count
-#   scheduler_backend_up_expression = var.scheduler_backend_up_expression
-#   scheduler_backend_up_state      = var.scheduler_backend_up_state
+  scheduler_backend_desired_count = var.scheduler_backend_desired_count
+  scheduler_backend_up_expression = var.scheduler_backend_up_expression
+  scheduler_backend_up_state      = var.scheduler_backend_up_state
 
-#   ecs_cluster_name         = module.ecs_fargate.cluster_name
-#   ecs_backend_service_name = module.ecs_fargate.ecs_backend_service_name
-# }
+  ecs_cluster_name         = module.ecs_fargate.cluster_name
+  ecs_backend_service_name = module.ecs_fargate.ecs_backend_service_name
+}

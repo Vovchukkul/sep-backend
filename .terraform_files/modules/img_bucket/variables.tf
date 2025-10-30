@@ -11,7 +11,7 @@ variable "prefix" {
 variable "img_domain_name" {
   description = "Domain name for images"
   type        = string
-  default = "changeme"
+  default     = "changeme"
 }
 
 variable "cloudfront_price_class" {

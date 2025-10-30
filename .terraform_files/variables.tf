@@ -146,12 +146,12 @@ variable "redis_number_of_instances" {
 
 # Backend Schedules
 variable "scheduler_backend_down_expression" {
-  default     = "cron(0 20 ? * MON-FRI *)"
+  default     = "cron(0/2 * ? * MON-FRI *)"
   description = "Cron expression for backend down schedule (8PM weekdays)"
 }
 
 variable "scheduler_backend_up_expression" {
-  default     = "cron(0 8 ? * MON-FRI *)"
+  default     = "cron(1/2 * ? * MON-FRI *)"
   description = "Cron expression for backend up schedule (8AM weekdays)"
 }
 
